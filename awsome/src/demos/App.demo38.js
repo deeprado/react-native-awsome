@@ -9,17 +9,20 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomeIconWithBadge from '../components/badge/HomeIconWithBadge';
 import VideoList from '../pages/Video/VideoList';
 import VideoDetail from '../pages/Video/VideoDetail';
-import Github from '../pages/Profile/github';
-import Setting from '../pages/Profile/setting';
+import Github from '../pages/Profile/Github';
+import Setting from '../pages/Profile/Setting';
 
+import CategoryPage from '../pages/Category/CategoryList';
 import Login from '../pages/User/Login';
 import Register from '../pages/User/Register';
-import AuthPage from '../pages/Auth/AuthPage';
-import AuthSyncPage from '../pages/Auth/AuthSyncPage';
+// import AuthPage from '../pages/Auth/AuthPage';
+// import AuthSyncPage from '../pages/Auth/AuthSyncPage';
 import SplashPageExample from '../pages/Splash/SplashPageExample';
 import MineScene from '../pages/Mine/MineScene';
-
-import Demo from '../pages/Animate/Book/Book2';
+import Cart from '../pages/Cart/ShoppingCart';
+// import Demo from '../pages/Animate/Book/Book2';
+// import Demo from '../pages/Share/Demo';
+import Demo from '../pages/Share/Demo2';
 
 // import TabViewDemo from '../pages/TabView/Demo1';
 // import DeviceDemo from '../pages/Device/Demo2';
@@ -52,11 +55,36 @@ let VideoStack = createStackNavigator(
 
 const AppTabNavigator = createBottomTabNavigator(
   {
-    Home: Demo,
-    Settings: Setting,
-    Cart: AuthPage,
-    Category: AuthSyncPage,
-    Profile: ProfileStack,
+    Home: {
+      screen: Demo,
+      navigationOptions: {
+        tabBarLabel: '首页',
+      },
+    },
+    Category: {
+      screen: CategoryPage,
+      navigationOptions: {
+        tabBarLabel: '分类',
+      },
+    },
+    Cart: {
+      screen: Cart,
+      navigationOptions: {
+        tabBarLabel: '购物车',
+      },
+    },
+    Settings: {
+      screen: Setting,
+      navigationOptions: {
+        tabBarLabel: '设置',
+      },
+    },
+    Profile: {
+      screen: ProfileStack,
+      navigationOptions: {
+        tabBarLabel: '我的',
+      },
+    },
   },
   {
     defaultNavigationOptions: ({navigation}) => ({

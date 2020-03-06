@@ -30,6 +30,9 @@ interface ILanguageDetailIconProps {
 
 @observer
 class LanguageDetailIcon extends Component<ILanguageDetailIconProps> {
+  static navigationOptions = {
+    tabBarLabel: '设置',
+  };
   constructor(props: ILanguageDetailIconProps) {
     super(props);
     reaction(
@@ -66,6 +69,10 @@ export interface ISettingProps extends IPageProps {}
 
 @observer
 export default class Setting extends Component<ISettingProps> {
+  static navigationOptions = {
+    tabBarLabel: '设置',
+  };
+
   constructor(props: ISettingProps) {
     super(props);
   }

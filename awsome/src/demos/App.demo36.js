@@ -36,7 +36,12 @@ const AppTabNavigator = createBottomTabNavigator(
     Settings: Setting,
     Cart: AuthPage,
     Category: AuthSyncPage,
-    Profile: ProfileStack,
+    Profile: {
+      screen: ProfileStack,
+      navigationOptions: {
+        tabBarLabel: '我的',
+      },
+    },
   },
   {
     defaultNavigationOptions: ({navigation}) => ({

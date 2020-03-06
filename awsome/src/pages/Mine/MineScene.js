@@ -16,6 +16,9 @@ var screenWidth = Dimensions.get('window').width;
 var screenHeight = Dimensions.get('window').height;
 
 class MineScene extends Component {
+  static navigationOptions = {
+    tabBarLabel: '我的',
+  };
   constructor(props) {
     super(props);
 

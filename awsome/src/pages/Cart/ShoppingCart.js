@@ -11,10 +11,10 @@ import {
 import ShoppingCartStyle from '../../styles/ShoppingCartStyle';
 const shoppingCartData = require('../../data/ShoppingCartData.json');
 
-const ic_selected = require('../assets/image/ic_selected.png');
-const ic_default = require('../assets/image/ic_default.png');
-const group = require('../assets/image/cart_group.png');
-const group5 = require('../assets/image/cart_group5.png');
+const ic_selected = require('../../assets/image/ic_selected.png');
+const ic_default = require('../../assets/image/ic_default.png');
+const group = require('../../assets/image/cart_group.png');
+const group5 = require('../../assets/image/cart_group5.png');
 
 export default class ShoppingCart extends Component {
   static navigationOptions = {

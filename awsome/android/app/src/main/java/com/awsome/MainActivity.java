@@ -4,6 +4,7 @@ package com.awsome;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Bundle;
 import android.provider.ContactsContract;
 import com.facebook.react.ReactActivity;
 
@@ -11,8 +12,30 @@ import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
 
+// import com.awsome.module.DemoShareModule;
+
+import com.awsome.module.UmengPushModule;
+import com.awsome.module.UmengShareModule;
+
+import com.umeng.analytics.MobclickAgent;
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.message.PushAgent;
 
 public class MainActivity extends ReactActivity {
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      // 分享
+      // DemoShareModule.initActivity(this);
+      // 友盟统计
+      MobclickAgent.setSessionContinueMillis(1000*40);
+      // 友盟推送
+      UmengPushModule.initPushSDK(this);
+      PushAgent.getInstance(this).onAppStart();
+      // 友盟分享
+      UmengShareModule.initSocialSDK(this);
+  }
 
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule
@@ -40,6 +63,12 @@ public class MainActivity extends ReactActivity {
       if (phoneResult.length > 0) {
           MainApplication.getMyMainPackage().getMyMainModule().sendMsgToRn(phoneResult[0], phoneResult[1] );
       }
+
+      // 分享
+      // UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+
+      // 友盟分享
+      UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
   }
 
   /**
@@ -89,5 +118,27 @@ public class MainActivity extends ReactActivity {
         return new RNGestureHandlerEnabledRootView(MainActivity.this);
       }
     };
+  }
+
+  @Override
+  protected void onDestroy() {
+      super.onDestroy();
+      // 解决内存泄漏问题
+      // UMShareAPI.get(this).release();
+      // 友盟
+      //MobclickAgent.onKillProcess(this);
+  }
+
+  @Override
+  public void onResume() {
+      super.onResume();
+      // 友盟
+      MobclickAgent.onResume(this);
+  }
+  @Override
+  protected void onPause() {
+      super.onPause();
+      // 友盟
+      MobclickAgent.onPause(this);
   }
 }

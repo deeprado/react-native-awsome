@@ -144,7 +144,8 @@ android {
         manifestPlaceholders = [
             JPUSH_PKGNAME: "com.awsome",
             JPUSH_APPKEY : "ff15f3bb6b893eee0c43bdf6", //在极光推送后台申请的APPKey
-            JPUSH_CHANNEL: "developer-default"
+            JPUSH_CHANNEL: "developer-default",
+            qqappid: "1110208027"
         ]
         multiDexEnabled true
     }
@@ -212,6 +213,15 @@ android {
 }
 
 dependencies {
+    // 友盟分享
+    // implementation files('libs/umeng-common-1.5.1.jar')
+    // implementation files('libs/umeng-share-core-6.9.1.jar')
+    // implementation files('libs/umeng-sharetool-6.9.1.jar')
+    // implementation files('libs/umeng-share-sina-simplify-6.9.1.jar')
+    // implementation files('libs/umeng-share-QQ-simplify-6.9.1.jar')
+    // implementation files('libs/umeng-share-wechat-simplify-6.9.1.jar')
+    // implementation files('libs/umeng-debug-1.0.0.jar')
+
     // 如果你需要支持GIF动图
     implementation 'com.facebook.fresco:animated-gif:2.0.0'
 

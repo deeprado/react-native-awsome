@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {cloneElement} from 'react';
 import {
   Animated,
   StyleSheet,
@@ -12,9 +12,23 @@ import {
 } from 'react-native';
 import {Provider, Modal, Toast} from '@ant-design/react-native';
 import {Icon, Slider} from 'react-native-elements';
+import autobind from 'autobind-decorator';
+
 import Battery from '../../../components/Battery';
 
 import Util from '../../Reader/utils/util';
+
+// import {_} from 'lodash';
+
+// console.log('_', _);
+
+// // _.wrap是lodash的一个函数,用来包裹传入的函数，然后返回一个新的函数
+// Text.prototype.render = _.wrap(Text.prototype.render, function(func, ...args) {
+//   let originText = func.apply(this, args);
+//   return cloneElement(originText, {
+//     style: [originText.props.style, styles.defaultFontFamily],
+//   });
+// });
 
 let chapter1 = {
   _id: '58ccc05923ff5c6b9d5053cc',
@@ -57,6 +71,7 @@ const PageTurns = ['无', '覆盖', '平滑', '仿真'];
 const Spaces = [5, 10, 15];
 
 // 翻书动画 覆盖
+@autobind
 class Book extends React.Component {
   constructor(props) {
     super(props);
@@ -169,7 +184,11 @@ class Book extends React.Component {
     console.log(item, index);
     return (
       <View
-        style={{flexDirection: 'row', backgroundColor: 'blue', flex: 1}}
+        style={{
+          flexDirection: 'row',
+          // backgroundColor: 'blue',
+          flex: 1,
+        }}
         key={index}>
         {this.renderContent(item)}
       </View>
@@ -190,7 +209,7 @@ class Book extends React.Component {
     return (
       <View
         style={{
-          backgroundColor: 'pink',
+          // backgroundColor: 'pink',
           position: 'relative',
           flex: 1,
         }}>
@@ -199,7 +218,7 @@ class Book extends React.Component {
             <View
               style={{
                 flex: 1,
-                backgroundColor: 'red',
+                backgroundColor: '#E9DFC7',
                 position: 'absolute',
                 top: 0,
                 left: 0,
@@ -223,14 +242,15 @@ class Book extends React.Component {
         style={{
           flex: 1,
           marginTop: Spaces[this.state.curSpaceInt],
-          backgroundColor: 'pink',
+          // backgroundColor: 'pink',
           flexWrap: 'nowrap',
         }}>
         <Text
           style={{
             color: '#604733',
             fontSize: this.state.curFontSize,
-            backgroundColor: 'green',
+            // backgroundColor: 'green',
+            fontFamily: 'simkai',
           }}
           key={index}>
           {item}
@@ -356,7 +376,11 @@ class Book extends React.Component {
     console.log('item', item);
     return (
       <View
-        style={{flexDirection: 'row', backgroundColor: 'blue', flex: 1}}
+        style={{
+          flexDirection: 'row',
+          // backgroundColor: 'blue',
+          flex: 1,
+        }}
         {...this._panResponder.panHandlers}>
         {this.renderContent(item)}
       </View>
@@ -382,6 +406,9 @@ class Book extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  defaultFontFamily: {
+    fontFamily: 'STKAITI',
+  },
   container: {
     flex: 1,
     backgroundColor: '#E9DFC7',
@@ -417,7 +444,6 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginRight: 10,
     marginLeft: 10,
-    backgroundColor: 'red',
     // backgroundColor: 'red',
   },
 });
