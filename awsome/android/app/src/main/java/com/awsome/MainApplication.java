@@ -4,6 +4,7 @@ import android.app.Application;
 import android.app.Notification;
 import android.content.Context;
 import android.os.Handler;
+import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
@@ -95,8 +96,11 @@ public class MainApplication extends Application implements ReactApplication {
 
         // 友盟
         UMConfigure.setLogEnabled(true);
-        RNUMConfigure.init(this, "59892f08310c9307b60023d0", "Umeng", UMConfigure.DEVICE_TYPE_PHONE,
-                "669c30a9584623e70e8cd01b0381dcb4");
+
+        // RNUMConfigure.init(this, "59892f08310c9307b60023d0", "Umeng", UMConfigure.DEVICE_TYPE_PHONE,
+        //         "669c30a9584623e70e8cd01b0381dcb4");
+        RNUMConfigure.init(this, "5e633511570df3d6d10000c3", "Umeng", UMConfigure.DEVICE_TYPE_PHONE,
+                "57e0066d8ead057b94e9aad352e687a4");
         initUpush();
 
     }
@@ -186,12 +190,14 @@ public class MainApplication extends Application implements ReactApplication {
         mPushAgent.register(new IUmengRegisterCallback() {
             @Override
             public void onSuccess(String deviceToken) {
-//                UmLog.i(TAG, "device token: " + deviceToken);
+                Log.i("mpush",  "device token: " + deviceToken);
+              //  UmLog.i(TAG, "device token: " + deviceToken);
             }
 
             @Override
             public void onFailure(String s, String s1) {
-//                UmLog.i(TAG, "register failed: " + s + " " + s1);
+                Log.i("mpush",   "register failed: " + s + " " + s1);
+                //  UmLog.i(TAG, "register failed: " + s + " " + s1);
             }
         });
     }

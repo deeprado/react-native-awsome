@@ -7,12 +7,17 @@ import android.view.View;
 
 import com.awsome.R;
 
+import com.umeng.message.PushAgent;
+
 public class MyActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+
+        PushAgent.getInstance(this).onAppStart();
+
     }
 
     public void goBack(View v) {

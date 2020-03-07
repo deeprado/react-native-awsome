@@ -4,7 +4,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import ColorUtil from './ColorUtil';
-import {StackNavigator} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
 import Share from './UShare_share';
 import Auth from './UShare_auth';
 
@@ -27,7 +27,7 @@ class ShareMain extends Component {
     );
   }
 }
-const ShareNav = StackNavigator(
+const ShareNav = createStackNavigator(
   {
     ShareMain: {screen: ShareMain},
     Auth: {
@@ -73,6 +73,7 @@ const ShareNav = StackNavigator(
     headerMode: 'screen', // 导航栏的显示模式, screen: 有渐变透明效果, float: 无透明效果, none: 隐藏导航栏
   },
 );
+
 const styles = StyleSheet.create({
   u_c: {
     flex: 1,

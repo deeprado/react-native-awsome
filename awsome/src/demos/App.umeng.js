@@ -6,6 +6,7 @@ import {StyleSheet, Text, Image} from 'react-native';
 
 import {createAppContainer} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import UShare from '../pages/Umeng/UShare';
 import Upush from '../pages/Umeng/UPush';
@@ -19,7 +20,7 @@ const StackNavigator = createBottomTabNavigator(
         tabBarLabel: '统计',
         tabBarIcon: ({tintColor}) => (
           <Image
-            source={require('./../images/analytics.png')}
+            source={require('../assets/image/umeng/analytics.png')}
             style={[{tintColor: tintColor}, styles.icon]}
           />
         ),
@@ -31,7 +32,7 @@ const StackNavigator = createBottomTabNavigator(
         tabBarLabel: '推送',
         tabBarIcon: ({tintColor}) => (
           <Image
-            source={require('./images/push.png')}
+            source={require('../assets/image/umeng/push.png')}
             style={[{tintColor: tintColor}, styles.icon]}
           />
         ),
@@ -43,7 +44,7 @@ const StackNavigator = createBottomTabNavigator(
         tabBarLabel: '分享',
         tabBarIcon: ({tintColor}) => (
           <Image
-            source={require('./images/share.png')}
+            source={require('../assets/image/umeng/share.png')}
             style={[{tintColor: tintColor}, styles.icon]}
           />
         ),
