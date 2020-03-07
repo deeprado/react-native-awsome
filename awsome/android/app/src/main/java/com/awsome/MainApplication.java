@@ -88,7 +88,7 @@ public class MainApplication extends Application implements ReactApplication {
     public void onCreate() {
         super.onCreate();
         SoLoader.init(this, /* native exopackage */ false);
-        initializeFlipper(this); // Remove this line if you don't want Flipper enabled
+//        initializeFlipper(this); // Remove this line if you don't want Flipper enabled
         //
         MultiDex.install(this);
         // 极光 调用此方法：点击通知让应用从后台切到前台
@@ -196,7 +196,7 @@ public class MainApplication extends Application implements ReactApplication {
 
             @Override
             public void onFailure(String s, String s1) {
-                Log.i("mpush",   "register failed: " + s + " " + s1);
+                Log.e("mpush",   "register failed: " + s + " " + s1);
                 //  UmLog.i(TAG, "register failed: " + s + " " + s1);
             }
         });

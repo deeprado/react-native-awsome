@@ -294,7 +294,7 @@
 
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="561cae6ae0f55abd990035bf" />
+            android:value="5e633511570df3d6d10000c3" />
 
         <!-- 极光 -->
         <meta-data
@@ -306,7 +306,7 @@
         <!-- 百度地图 -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="GCmcmj6kp2F5lI72A95mdtYVGuG9ynSp" />
+            android:value="8U30gvfWYOjIkqwDRulOAFgAUTrbI1lr" />
         <!-- 高德地图 -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
