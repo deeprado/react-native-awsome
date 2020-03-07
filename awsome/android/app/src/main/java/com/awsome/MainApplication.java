@@ -18,8 +18,6 @@ import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
-import com.microsoft.codepush.react.CodePush;
-
 
 import com.umeng.commonsdk.UMConfigure;
 import com.umeng.message.IUmengRegisterCallback;
@@ -31,10 +29,11 @@ import com.umeng.message.UmengNotificationClickHandler;
 import com.umeng.message.entity.UMessage;
 import com.umeng.socialize.PlatformConfig;
 
-// import com.awsome.module.DemoSharePackage;
+import com.awsome.module.Umeng.DplusReactPackage;
+import com.awsome.module.Umeng.RNUMConfigure;
 
-import com.awsome.module.DplusReactPackage;
-import com.awsome.module.RNUMConfigure;
+import com.awsome.module.MyMain.MyMainPackage;
+import com.awsome.module.Toast.CustomToastPackage;
 
 public class MainApplication extends Application implements ReactApplication {
     // 设置为 true 将不弹出 toast
@@ -45,8 +44,8 @@ public class MainApplication extends Application implements ReactApplication {
     private static final String TAG = MainApplication.class.getName();
     private Handler handler;
 
+    // 自定义包
     private static final MyMainPackage myMainPackage = new MyMainPackage();
-
     public static MyMainPackage getMyMainPackage() {
         return myMainPackage;
     }
@@ -67,8 +66,6 @@ public class MainApplication extends Application implements ReactApplication {
             packages.add(myMainPackage);
             // 添加这一行，类名替换成你的Package类的名字 name.
             packages.add(new CustomToastPackage());
-            // 分享
-            // packages.add(new DemoSharePackage());
 
             // 友盟
             packages.add(new DplusReactPackage());
@@ -93,12 +90,8 @@ public class MainApplication extends Application implements ReactApplication {
         initializeFlipper(this); // Remove this line if you don't want Flipper enabled
         //
         MultiDex.install(this);
-        // 调用此方法：点击通知让应用从后台切到前台
+        // 极光 调用此方法：点击通知让应用从后台切到前台
         // JPushModule.registerActivityLifecycle(this);
-
-        // 分享
-        // Config.shareType = "react native";
-        // UMConfigure.init(this, "友盟Key", "umeng", UMConfigure.DEVICE_TYPE_PHONE, "");
 
         // 友盟
         UMConfigure.setLogEnabled(true);
@@ -203,6 +196,7 @@ public class MainApplication extends Application implements ReactApplication {
         });
     }
 
+    // 友盟平台配置
     {
         PlatformConfig.setWeixin("wxdc1e388c3822c80b", "3baf1193c85774b3fd9d18447d76cab0");
         // 豆瓣RENREN平台目前只能在服务器端配置

@@ -1,6 +1,4 @@
-package com.awsome;
-
-import androidx.annotation.NonNull;
+package com.awsome.module.MyMain;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;

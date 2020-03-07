@@ -1,6 +1,7 @@
-package com.awsome;
+package com.awsome.module.Toast;
 
 
+import com.awsome.module.Toast.ToastModule;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;

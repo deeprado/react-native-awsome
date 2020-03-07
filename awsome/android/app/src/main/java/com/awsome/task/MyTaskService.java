@@ -1,4 +1,4 @@
-package com.awsome;
+package com.awsome.task;
 
 
 import android.content.Intent;
@@ -17,7 +17,7 @@ public class MyTaskService extends HeadlessJsTaskService {
     Bundle extras = intent.getExtras();
     if (extras != null) {
       return new HeadlessJsTaskConfig(
-          "SomeTaskName",
+          "MyTask",
           Arguments.fromBundle(extras),
           5000, // 任务的超时时间
           false // 可选参数：是否允许任务在前台运行，默认为false

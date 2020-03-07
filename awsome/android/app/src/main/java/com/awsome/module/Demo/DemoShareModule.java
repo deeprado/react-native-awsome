@@ -1,4 +1,4 @@
-package com.awsome.module;
+package com.awsome.module.Demo;
 
 import android.app.Activity;
 import android.content.Context;

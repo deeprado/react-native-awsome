@@ -1,4 +1,4 @@
-package com.awsome.module;
+package com.awsome.module.Umeng;
 
 import android.app.Activity;
 
@@ -14,7 +14,6 @@ import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableMap;
 import com.umeng.message.MsgConstant;

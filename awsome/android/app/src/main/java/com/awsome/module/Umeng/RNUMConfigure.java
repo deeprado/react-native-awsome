@@ -1,5 +1,5 @@
 
-package com.awsome.module;
+package com.awsome.module.Umeng;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

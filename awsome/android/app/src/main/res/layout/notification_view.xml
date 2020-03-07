@@ -7,7 +7,7 @@
         android:id="@+id/notification_large_icon"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:scaleType="fitXY"
+        android:contentDescription="TODO" android:scaleType="fitXY"
         android:src="@drawable/ic_launcher" />
 
     <TextView
@@ -15,8 +15,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
-        android:layout_toRightOf="@+id/notification_large_icon"
+        android:layout_marginStart="10dp" android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/notification_large_icon" android:layout_toRightOf="@+id/notification_large_icon"
         android:text="Title"
         android:textColor="@android:color/black"/>
 
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/notification_title"
         android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@+id/notification_large_icon"
+        android:layout_toEndOf="@+id/notification_large_icon" android:layout_marginStart="10dp" android:layout_toRightOf="@+id/notification_large_icon"
         android:text="Message"
         android:textColor="@android:color/black"/>
 
@@ -37,7 +37,7 @@
         android:layout_below="@+id/notification_text"
         android:layout_marginLeft="10dp"
         android:textSize="10dp"
-        android:layout_toRightOf="@+id/notification_large_icon"
+        android:layout_toEndOf="@+id/notification_large_icon" android:layout_marginStart="10dp" android:layout_toRightOf="@+id/notification_large_icon"
         android:text="(嘿嘿，偷偷听告诉你，我是自定义的)"
         android:textColor="@android:color/black"/>
     
@@ -45,10 +45,10 @@
         android:id="@+id/notification_small_icon"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:scaleType="fitXY"
+        android:contentDescription="TODO" android:scaleType="fitXY"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="5dp"
+        android:layout_alignParentEnd="true" android:layout_alignParentRight="true"
+        android:layout_marginEnd="5dp" android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
         android:src="@drawable/ic_launcher" />
 

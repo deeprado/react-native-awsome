@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import com.awsome.task.MyTaskService;
 import com.facebook.react.HeadlessJsTaskService;
 
 import java.util.List;

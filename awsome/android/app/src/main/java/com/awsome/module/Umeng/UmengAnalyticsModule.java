@@ -1,4 +1,4 @@
-package com.awsome.module;
+package com.awsome.module.Umeng;
 
 import java.util.ArrayList;
 import java.util.HashMap;

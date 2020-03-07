@@ -1,4 +1,4 @@
-package com.awsome;
+package com.awsome.module.Toast;
 
 import android.widget.Toast;
 

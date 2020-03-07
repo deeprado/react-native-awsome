@@ -1,6 +1,5 @@
-package com.awsome;
+package com.awsome.module.MyMain;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -8,12 +7,12 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.facebook.react.bridge.Callback;
+import com.awsome.dto.ContactDto;
+import com.awsome.active.MyActivity;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
-import com.facebook.react.uimanager.PixelUtil;
 
 import java.util.HashMap;
 import java.util.Map;

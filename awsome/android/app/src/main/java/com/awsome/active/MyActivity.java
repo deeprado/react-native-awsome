@@ -1,9 +1,11 @@
-package com.awsome;
+package com.awsome.active;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+
+import com.awsome.R;
 
 public class MyActivity extends AppCompatActivity {
 

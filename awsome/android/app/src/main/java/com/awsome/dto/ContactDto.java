@@ -1,4 +1,4 @@
-package com.awsome;
+package com.awsome.dto;
 
 public class ContactDto {
     String phoneNum;
