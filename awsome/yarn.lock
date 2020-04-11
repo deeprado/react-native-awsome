@@ -8317,6 +8317,11 @@ react-native-netinfo@^1.1.0:
   resolved "https://registry.npm.taobao.org/react-native-netinfo/download/react-native-netinfo-1.1.0.tgz#343a4a9413006493f350bc7923688bb3315c3dce"
   integrity sha1-NDpKlBMAZJPzULx5I2iLszFcPc4=
 
+react-native-nfc-manager@^2.1.6:
+  version "2.1.6"
+  resolved "https://registry.npm.taobao.org/react-native-nfc-manager/download/react-native-nfc-manager-2.1.6.tgz#931dff46d3034180e7bced64c0283ec433279359"
+  integrity sha1-kx3/RtMDQYDnvO1kwCg+xDMnk1k=
+
 react-native-paper@^3.6.0:
   version "3.8.0"
   resolved "https://registry.npm.taobao.org/react-native-paper/download/react-native-paper-3.8.0.tgz?cache=0&sync_timestamp=1586341458492&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-native-paper%2Fdownload%2Freact-native-paper-3.8.0.tgz#94d9b50b945ce91c90491cce34d1c27845503990"
