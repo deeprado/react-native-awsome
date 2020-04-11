@@ -12,6 +12,8 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+// import RCTDeviceEventEmitter from 'RCTDeviceEventEmitter';
+
 import Util from './utils';
 
 class Button extends Component {
@@ -51,13 +53,13 @@ export default class Day30 extends Component {
   }
 
   _sendNotification() {
-    require('RCTDeviceEventEmitter').emit('remoteNotificationReceived', {
-      aps: {
-        alert: 'This is the 30th day of this project',
-        badge: '1',
-        sound: 'default',
-      },
-    });
+    // RCTDeviceEventEmitter.emit('remoteNotificationReceived', {
+    //   aps: {
+    //     alert: 'This is the 30th day of this project',
+    //     badge: '1',
+    //     sound: 'default',
+    //   },
+    // });
   }
 
   render() {

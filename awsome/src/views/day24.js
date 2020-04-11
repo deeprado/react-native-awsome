@@ -15,9 +15,10 @@ import {
   ScrollView,
   View,
 } from 'react-native';
-import Util from './utils';
 import Icon from 'react-native-vector-icons/Ionicons';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
+
+import Util from './utils';
 
 class HomePage extends Component {
   render() {

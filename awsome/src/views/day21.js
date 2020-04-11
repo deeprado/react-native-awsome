@@ -13,8 +13,9 @@ import {
   LayoutAnimation,
   View,
 } from 'react-native';
-import Util from './utils';
 import {ReminderContainer} from './day20';
+
+import Util from './utils';
 
 export default class Day21 extends Component {
   constructor() {

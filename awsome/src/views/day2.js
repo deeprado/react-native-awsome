@@ -19,7 +19,7 @@ import {
 } from 'react-native';
 import Util from './utils';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Swiper from 'react-native-swiper';
+import {Carousel} from '@ant-design/react-native';
 
 const weatherData = [
   {
@@ -557,9 +557,9 @@ const weatherData = [
 ];
 
 class Weather extends Component {
-  static propTypes = {
-    back: React.PropTypes.func.isRequired,
-  };
+  // static propTypes = {
+  //   back: React.PropTypes.func.isRequired,
+  // };
 
   constructor(props) {
     super(props);
@@ -577,6 +577,16 @@ class Weather extends Component {
   _back() {
     this.props.back();
   }
+
+  onHorizontalSelectedIndexChange = index => {
+    /* tslint:disable: no-console */
+    console.log('horizontal change to', index);
+  };
+
+  onVerticalSelectedIndexChange = index => {
+    /* tslint:disable: no-console */
+    console.log('vertical change to', index);
+  };
 
   render() {
     const slides = this.state.weather.map((elem, index) => {
@@ -737,45 +747,14 @@ class Weather extends Component {
 
     return (
       <View>
-        <Swiper
+        <Carousel
           style={styles.wrapper}
-          showsButtons={false}
-          paginationStyle={{
-            bottom: 10,
-            paddingTop: 10,
-            borderTopColor: 'rgba(255,255,255,0.7)',
-            borderTopWidth: Util.pixel,
-          }}
-          dot={
-            <View
-              style={{
-                backgroundColor: 'rgba(255,255,255,0.2)',
-                width: 6,
-                height: 6,
-                borderRadius: 3,
-                marginLeft: 3,
-                marginRight: 3,
-                marginTop: 3,
-                marginBottom: 3,
-              }}
-            />
-          }
-          activeDot={
-            <View
-              style={{
-                backgroundColor: 'rgba(255,255,255,0.5)',
-                width: 6,
-                height: 6,
-                borderRadius: 3,
-                marginLeft: 3,
-                marginRight: 3,
-                marginTop: 3,
-                marginBottom: 3,
-              }}
-            />
-          }>
+          selectedIndex={2}
+          autoplay
+          infinite
+          afterChange={this.onHorizontalSelectedIndexChange}>
           {slides}
-        </Swiper>
+        </Carousel>
         <TouchableOpacity
           activeOpacit={1}
           onPress={() => this._back()}

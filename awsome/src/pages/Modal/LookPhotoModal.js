@@ -1,14 +1,7 @@
 import React, {Component} from 'react';
 import {
   View,
-  Text,
-  TouchableHighlight,
-  StyleSheet,
-  ScrollView,
-  ListView,
-  Image,
   Modal,
-  TouchableOpacity,
   Dimensions,
   ActivityIndicator,
   CameraRoll,
@@ -17,6 +10,7 @@ import {
 import ImageViewer from 'react-native-image-zoom-viewer';
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
+
 export default class LookPhotoModal extends Component {
   constructor(props) {
     super(props);

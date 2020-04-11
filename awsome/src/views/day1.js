@@ -7,21 +7,18 @@
 import React, {Component} from 'react';
 import {
   Platform,
-  ListView,
   StyleSheet,
   StatusBar,
   Text,
   TouchableOpacity,
   View,
+  FlatList,
 } from 'react-native';
+import PropTypes from 'prop-types';
+
 import Util from './utils';
 
 class WatchFace extends Component {
-  static propTypes = {
-    sectionTime: React.PropTypes.string.isRequired,
-    totalTime: React.PropTypes.string.isRequired,
-  };
-
   render() {
     return (
       <View style={styles.watchFaceContainer}>
@@ -32,14 +29,12 @@ class WatchFace extends Component {
   }
 }
 
-class WatchControl extends Component {
-  static propTypes = {
-    stopWatch: React.PropTypes.func.isRequired,
-    clearRecord: React.PropTypes.func.isRequired,
-    startWatch: React.PropTypes.func.isRequired,
-    addRecord: React.PropTypes.func.isRequired,
-  };
+WatchFace.propTypes = {
+  sectionTime: PropTypes.string.isRequired,
+  totalTime: PropTypes.string.isRequired,
+};
 
+class WatchControl extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -113,19 +108,22 @@ class WatchControl extends Component {
   }
 }
 
-class WatchRecord extends Component {
-  static propTypes = {
-    record: React.PropTypes.array.isRequired,
-  };
+// WatchControl.propTypes = {
+//   stopWatch: PropTypes.func.isRequired,
+//   clearRecord: PropTypes.func.isRequired,
+//   startWatch: PropTypes.func.isRequired,
+//   addRecord: PropTypes.func.isRequired,
+// };
 
+class WatchRecord extends Component {
   render() {
-    let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}),
-      theDataSource = ds.cloneWithRows(this.props.record);
+    let ds = [],
+      theDataSource = this.props.record;
     return (
-      <ListView
+      <FlatList
         style={styles.recordList}
-        dataSource={theDataSource}
-        renderRow={rowData => (
+        data={theDataSource}
+        renderItem={({item: rowData}) => (
           <View style={styles.recordItem}>
             <Text style={styles.recordItemTitle}>{rowData.title}</Text>
             <View style={{alignItems: 'center'}}>
@@ -137,6 +135,10 @@ class WatchRecord extends Component {
     );
   }
 }
+
+WatchRecord.propTypes = {
+  record: PropTypes.array.isRequired,
+};
 
 export default class extends Component {
   constructor() {
@@ -291,13 +293,15 @@ export default class extends Component {
       <View style={styles.watchContainer}>
         <WatchFace
           totalTime={this.state.totalTime}
-          sectionTime={this.state.sectionTime}></WatchFace>
+          sectionTime={this.state.sectionTime}
+        />
         <WatchControl
           addRecord={() => this._addRecord()}
           clearRecord={() => this._clearRecord()}
           startWatch={() => this._startWatch()}
-          stopWatch={() => this._stopWatch()}></WatchControl>
-        <WatchRecord record={this.state.record}></WatchRecord>
+          stopWatch={() => this._stopWatch()}
+        />
+        <WatchRecord record={this.state.record} />
       </View>
     );
   }

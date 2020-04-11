@@ -11,10 +11,10 @@ import Util from './utils';
 import PasswordGesture from 'react-native-gesture-password';
 
 export class EnterPassword extends Component {
-  static propTypes = {
-    password: React.PropTypes.string.isRequired,
-    enterPassword: React.PropTypes.func.isRequired,
-  };
+  // static propTypes = {
+  //   password: React.PropTypes.string.isRequired,
+  //   enterPassword: React.PropTypes.func.isRequired,
+  // };
 
   constructor(props) {
     super(props);

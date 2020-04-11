@@ -19,16 +19,17 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import Util from './utils';
 import Icon from 'react-native-vector-icons/Ionicons';
 import ScrollableTabView from 'react-native-scrollable-tab-view';
+
+import Util from './utils';
 
 const AnimatedIcon = Animated.createAnimatedComponent(Icon);
 
 class Entrance extends Component {
-  static propTypes = {
-    hideThis: React.PropTypes.func.isRequired,
-  };
+  // static propTypes = {
+  //   hideThis: React.PropTypes.func.isRequired,
+  // };
 
   constructor() {
     super();
@@ -149,11 +150,11 @@ class TwitterFlow extends Component {
 const FacebookTabBar = React.createClass({
   tabIcons: [],
 
-  propTypes: {
-    goToPage: React.PropTypes.func,
-    activeTab: React.PropTypes.number,
-    tabs: React.PropTypes.array,
-  },
+  // propTypes: {
+  //   goToPage: React.PropTypes.func,
+  //   activeTab: React.PropTypes.number,
+  //   tabs: React.PropTypes.array,
+  // },
 
   componentDidMount() {
     setTimeout(() => this.props.goToPage(0), 0);

@@ -11,7 +11,6 @@ import {
   Text,
   TouchableHighlight,
   PanResponder,
-  LayoutAnimation,
   ScrollView,
   TabBarIOS,
   StatusBar,
@@ -41,7 +40,8 @@ class TwitterUser extends Component {
   _opacity = 0;
   _minTop = -192;
   _userStyle = {};
-  user = (null ? { setNativeProps(props) } : null);
+  // user = (null ? { setNativeProps(props) } : null);
+  user = null;
 
   _updatePosition() {
     this.user && this.user.setNativeProps(this._userStyles);
@@ -163,21 +163,23 @@ class TwitterUser extends Component {
             </View>
           </View>
           {this.state.bannerTop <= 0 ? (
-            <View></View>
+            <View />
           ) : (
             <Image
               style={[styles.banner, {top: this.state.bannerTop}]}
-              source={{uri: 'banner'}}></Image>
+              source={{uri: 'banner'}}
+            />
           )}
           {this.state.bannerTop <= 0 ? (
-            <View></View>
+            <View />
           ) : (
             <Image
               style={[
                 styles.banner,
                 {top: this.state.bannerTop, opacity: this.state.opacity},
               ]}
-              source={{uri: 'bannerBlur'}}></Image>
+              source={{uri: 'bannerBlur'}}
+            />
           )}
           <Text
             style={{
@@ -211,7 +213,8 @@ class TwitterUser extends Component {
                 height: 0.835 * Util.size.width,
                 resizeMode: 'contain',
               }}
-              source={{uri: 'moreinfo'}}></Image>
+              source={{uri: 'moreinfo'}}
+            />
           </View>
         </ScrollView>
       </View>

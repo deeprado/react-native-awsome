@@ -6,21 +6,26 @@
 
 import React, {Component} from 'react';
 import {
-  Animated,
-  Image,
-  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
   TouchableHighlight,
   View,
 } from 'react-native';
-import Video from 'react-native-video';
 import Util from './utils';
-import Swiper from 'react-native-swiper';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {Carousel} from '@ant-design/react-native';
 
 class Intro extends Component {
+  onHorizontalSelectedIndexChange(index) {
+    /* tslint:disable: no-console */
+    console.log('horizontal change to', index);
+  }
+  onVerticalSelectedIndexChange(index) {
+    /* tslint:disable: no-console */
+    console.log('vertical change to', index);
+  }
+
   render() {
     return (
       <View style={styles.backgroundFixed}>
@@ -33,38 +38,12 @@ class Intro extends Component {
           </View>
         </View>
         <View style={styles.sliders}>
-          <Swiper
-            height={Util.size.height - 200}
-            showsButtons={false}
-            autoplay={false}
-            dot={
-              <View
-                style={{
-                  backgroundColor: 'rgba(255,255,255,0.2)',
-                  width: 6,
-                  height: 6,
-                  borderRadius: 3,
-                  marginLeft: 3,
-                  marginRight: 3,
-                  marginTop: 3,
-                  marginBottom: 3,
-                }}
-              />
-            }
-            activeDot={
-              <View
-                style={{
-                  backgroundColor: 'rgba(255,255,255,1)',
-                  width: 6,
-                  height: 6,
-                  borderRadius: 3,
-                  marginLeft: 3,
-                  marginRight: 3,
-                  marginTop: 3,
-                  marginBottom: 3,
-                }}
-              />
-            }>
+          <Carousel
+            style={styles.wrapper}
+            selectedIndex={2}
+            autoplay
+            infinite
+            afterChange={this.onHorizontalSelectedIndexChange}>
             <View style={styles.slide}>
               <Text style={styles.slideTextTitle}>Welcome</Text>
               <Text style={styles.slideText}>
@@ -98,7 +77,7 @@ class Intro extends Component {
               </Text>
               <Text style={styles.slideText}>music collection.</Text>
             </View>
-          </Swiper>
+          </Carousel>
         </View>
         <View style={styles.btnContainer}>
           <TouchableHighlight

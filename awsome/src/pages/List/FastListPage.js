@@ -7,7 +7,6 @@ import {
   FlatList,
   ActivityIndicator,
   StyleSheet,
-  ListView,
 } from 'react-native';
 
 class Row extends Component {
@@ -212,8 +211,8 @@ export default class FastListPage extends Component {
 
   _renderData2 = () => {
     return (
-      <ListView
-        dataSource={this.state.rowData}
+      <FlatList
+        data={this.state.rowData}
         keyExtractor={this._keyExtractor}
         renderItem={this._renderItem}
         renderFooter={this._renderFooter}

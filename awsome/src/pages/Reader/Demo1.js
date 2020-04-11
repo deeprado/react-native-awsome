@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Dimensions, ListView} from 'react-native';
+import {View, Text, Dimensions, FlatList} from 'react-native';
 import {Container, Navbar} from 'navbar-native';
 import {parseArticleContent} from './parser';
 import {Button} from 'react-native-elements';
@@ -16,7 +16,6 @@ import realmFactory from './utils/realmFactory';
 //   index: number, // start
 // };
 
-const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 class Reader extends React.Component {
   constructor(props) {
     super(props);
@@ -123,7 +122,7 @@ class Reader extends React.Component {
         this._isMounted &&
           this.setState({
             fetching: false,
-            dataSource: ds.cloneWithRows(rows),
+            dataSource: rows,
             index,
           });
       })
@@ -218,13 +217,13 @@ class Reader extends React.Component {
         };
         //将内容分成多个数组来显示
         content = (
-          <ListView
+          <FlatList
             style={{
               height: height,
               paddingTop: 10,
               paddingLeft: this.state.fontSize - 10,
             }}
-            renderFooter={() => {
+            ListFooterComponent={() => {
               return (
                 <View
                   style={{
@@ -238,8 +237,8 @@ class Reader extends React.Component {
             pageSize={40}
             onEndReachedThreshold={100}
             scrollRenderAheadDistance={500}
-            dataSource={this.state.dataSource}
-            renderRow={rowData => {
+            data={this.state.dataSource}
+            renderItem={({item: rowData, index}) => {
               if (typeof rowData == 'string') {
                 return <Text style={style}>{rowData}</Text>;
               } else {

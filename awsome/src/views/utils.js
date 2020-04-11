@@ -1,8 +1,6 @@
 // obtained from react native tutorials
 
-import React from 'react';
-import {PixelRatio} from 'react-native';
-import Dimensions from 'Dimensions';
+import {PixelRatio, Dimensions} from 'react-native';
 
 const Util = {
   ratio: PixelRatio.get(),

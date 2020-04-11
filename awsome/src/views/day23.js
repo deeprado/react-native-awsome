@@ -14,8 +14,9 @@ import {
   View,
   WebView,
 } from 'react-native';
-import Util from './utils';
 import Icon from 'react-native-vector-icons/Ionicons';
+
+import Util from './utils';
 
 class Poincare extends Component {
   render() {

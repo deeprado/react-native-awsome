@@ -592,7 +592,6 @@ class Reader extends Component {
   handleScroll(e) {
     let arr = [];
     let chapterInfo;
-    // let listView = this.refs.listView;
     let x = e.nativeEvent.contentOffset.x;
     const that = this;
     if (this.count === 0) {

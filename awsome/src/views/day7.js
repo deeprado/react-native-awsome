@@ -29,7 +29,8 @@ class MoveableCircle extends Component {
   _maxTop = Util.size.height - 110;
   _maxLeft = Util.size.width - 98;
   _circleStyles = {};
-  circle = (null ? {setNativeProps(props)} : null);
+  // circle = (null ? {setNativeProps(props)} : null);
+  circle = null;
 
   _updatePosition() {
     this.circle && this.circle.setNativeProps(this._circleStyles);

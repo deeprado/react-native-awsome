@@ -8,10 +8,11 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import Util from '../views/utils';
 import Icon from 'react-native-vector-icons/Ionicons';
 import IconFA from 'react-native-vector-icons/FontAwesome';
-import Swiper from 'react-native-swiper';
+import {Carousel} from '@ant-design/react-native';
+
+import Util from '../views/utils';
 
 class MainView extends Component {
   constructor() {
@@ -330,6 +331,15 @@ class MainView extends Component {
     });
   }
 
+  onHorizontalSelectedIndexChange(index) {
+    /* tslint:disable: no-console */
+    console.log('horizontal change to', index);
+  }
+  onVerticalSelectedIndexChange(index) {
+    /* tslint:disable: no-console */
+    console.log('vertical change to', index);
+  }
+
   render() {
     let that = this;
     let boxs = this.state.days.map(function(elem, index) {
@@ -364,24 +374,12 @@ class MainView extends Component {
     });
     return (
       <ScrollView style={styles.mainView} title={this.props.title}>
-        <Swiper
-          height={150}
-          showsButtons={false}
-          autoplay={true}
-          activeDot={
-            <View
-              style={{
-                backgroundColor: 'rgba(255,255,255,0.8)',
-                width: 8,
-                height: 8,
-                borderRadius: 4,
-                marginLeft: 3,
-                marginRight: 3,
-                marginTop: 3,
-                marginBottom: 3,
-              }}
-            />
-          }>
+        <Carousel
+          style={styles.wrapper}
+          selectedIndex={2}
+          autoplay
+          infinite
+          afterChange={this.onHorizontalSelectedIndexChange}>
           <TouchableOpacity activeOpacit={1} onPress={() => that._jumpToDay(0)}>
             <View style={styles.slide}>
               <Image
@@ -400,7 +398,7 @@ class MainView extends Component {
               <Text style={styles.slideText}>Day2: Weather</Text>
             </View>
           </TouchableOpacity>
-        </Swiper>
+        </Carousel>
         <View style={styles.touchBoxContainer}>{boxs}</View>
       </ScrollView>
     );

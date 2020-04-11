@@ -8,8 +8,8 @@ import {
   Dimensions,
   SectionList,
   FileList,
-  ListView,
 } from 'react-native';
+
 const {width, height} = Dimensions.get('window');
 // 适配性函数
 const UIWIDTH = 750;
@@ -25,9 +25,6 @@ const CONTENT_LIST_TAG = rx(80);
 export default class CityList extends React.Component {
   constructor(props) {
     super(props);
-    this.dSource = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2,
-    });
     this.sectionList = null;
     this.dealCity();
   }
@@ -38,7 +35,7 @@ export default class CityList extends React.Component {
 
   // 此页面初始化
   initPage = () => {
-    this.sectionList = this.refs.sectionList;
+    this.sectionList = this.sectionList;
   };
 
   //  二次处理数据
@@ -147,7 +144,7 @@ export default class CityList extends React.Component {
           <View style={styles.contentContainer}>
             <View style={styles.contentList}>
               <SectionList
-                ref="sectionList"
+                ref={sectionList => this.sectionList}
                 stickySectionHeadersEnabled={true}
                 sections={cityIndex}
                 renderSectionHeader={this._renderSectionHeader}

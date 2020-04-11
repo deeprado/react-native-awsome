@@ -7,10 +7,16 @@
 'use strict';
 
 import React, {Component} from 'react';
-import {findNodeHandle, StyleSheet, Text, ScrollView, View} from 'react-native';
-import Util from './utils';
+import {
+  findNodeHandle,
+  StyleSheet,
+  Text,
+  ScrollView,
+  View,
+  UIManager,
+} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {UIManager} from 'NativeModules';
+import Util from './utils';
 
 export default class Day27 extends Component {
   constructor() {

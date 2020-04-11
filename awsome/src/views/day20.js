@@ -15,29 +15,28 @@ import {
   TouchableHighlight,
   View,
 } from 'react-native';
-import Util from './utils';
 // import {BlurView,VibrancyView} from 'react-native-blur';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-export class ReminderContainer extends Component {
-  static defaultProps = {
-    listData: {
-      title: '提醒事项',
-      numOfItems: 0,
-      theme: '#fe952b',
-      list: [],
-    },
-  };
+import Util from './utils';
 
-  static propTypes = {
-    listData: React.PropTypes.object,
-    switch: React.PropTypes.func,
-  };
+export class ReminderContainer extends Component {
+  // static propTypes = {
+  //   listData: React.PropTypes.object,
+  //   switch: React.PropTypes.func,
+  // };
 
   constructor(props) {
     super(props);
     this.state = {
-      listData: this.props.listData,
+      listData: this.props.listData
+        ? props.listData
+        : {
+            title: '提醒事项',
+            numOfItems: 0,
+            theme: '#fe952b',
+            list: [],
+          },
       numOfItems: this.props.listData.numOfItems,
     };
     this.animations = {

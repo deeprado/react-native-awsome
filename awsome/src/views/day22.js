@@ -16,8 +16,9 @@ import {
   Easing,
   View,
 } from 'react-native';
-import Util from './utils';
 import Icon from 'react-native-vector-icons/Ionicons';
+
+import Util from './utils';
 
 export default class Day22 extends Component {
   constructor() {

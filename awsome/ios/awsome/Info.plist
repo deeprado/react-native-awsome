@@ -54,7 +54,7 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
   <key>LSApplicationQueriesSchemes</key>
-<array>
+  <array>
     <!-- 微信 URL Scheme 白名单-->
     <string>wechat</string>
     <string>weixin</string>
@@ -112,5 +112,7 @@
     <string>fbauth2</string>
     <string>fbshareextension</string>
   </array>
+  <key>NSFaceIDUsageDescription</key>
+  <string>Enabling Face ID allows you quick and secure access to your account.</string>
 </dict>
 </plist>

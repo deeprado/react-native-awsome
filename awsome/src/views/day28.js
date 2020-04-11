@@ -16,8 +16,9 @@ import {
   CameraRoll,
   View,
 } from 'react-native';
-import Util from './utils';
 import Icon from 'react-native-vector-icons/Ionicons';
+
+import Util from './utils';
 
 export default class Day28 extends Component {
   constructor() {
